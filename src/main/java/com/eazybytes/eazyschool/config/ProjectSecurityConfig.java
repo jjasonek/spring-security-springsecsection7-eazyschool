@@ -24,8 +24,8 @@ public class ProjectSecurityConfig {
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/dashboard").authenticated()
                         .requestMatchers("/", "/home", "/holidays/**", "/contact", "/saveMsg",
-                                "/courses", "/about", "/assets/**").permitAll())
-                .formLogin(Customizer.withDefaults())
+                                "/courses", "/about", "/assets/**", "/login/**").permitAll())
+                .formLogin(flc -> flc.loginPage("/login"))  // "/login" is path in our LoginController (Get operation)
                 .httpBasic(Customizer.withDefaults());
 
         return http.build();

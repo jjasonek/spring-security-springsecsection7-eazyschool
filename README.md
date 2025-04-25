@@ -6,3 +6,10 @@
 
 In the initial phase the application uses the default spring Security Login page.
 We want to use teh custom one.
+
+
+### setting the custom login page 
+After changing the formLogin() to display our custom login page, 
+we get error: "ERR_TOO_MANY_REDIRECTS"
+That's why we also add "/login/**" to permitAll() in authorizeHttpRequests(). 
+This means all paths beginning with "/login/" are allowed to be accessed without authentication.
