@@ -25,7 +25,9 @@ public class ProjectSecurityConfig {
                         .requestMatchers("/dashboard").authenticated()
                         .requestMatchers("/", "/home", "/holidays/**", "/contact", "/saveMsg",
                                 "/courses", "/about", "/assets/**", "/login/**").permitAll())
-                .formLogin(flc -> flc.loginPage("/login").defaultSuccessUrl("/dashboard"))
+                .formLogin(flc -> flc.loginPage("/login")   // "/login" is path in our LoginController (Get operation)
+                                     .defaultSuccessUrl("/dashboard")
+                )
                 .httpBasic(Customizer.withDefaults());
 
         return http.build();
