@@ -29,6 +29,7 @@ public class ProjectSecurityConfig {
                         .usernameParameter("userid")
                         .passwordParameter("secretPwd")
                                      .defaultSuccessUrl("/dashboard")
+                                     .failureUrl("/login?error=true")
                 )
                 .httpBasic(Customizer.withDefaults());
 

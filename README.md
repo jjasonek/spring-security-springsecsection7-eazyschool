@@ -18,3 +18,6 @@ Byt I want the Dashboard page: http://localhost:8080/dashboard.
 
 **By clicking "Logout"**, we are redcirected to http://localhost:8080/login?logout.
 We dont get an error because of setting "/login/**" in authorizeHttpRequests().
+
+**After failed login attempt**, we are redirected to http://localhost:8080/login?error.
+We use the error **parameter** to display error message on the login page. 
